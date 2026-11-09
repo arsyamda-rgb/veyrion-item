@@ -1,0 +1,9 @@
+# Resource pack generation.
+# One content definition -> one zip per version in plugins/VeyrionItem/output/
+# (versions that share a pack_format get byte-identical zips).
+pack:
+  base-version: "1.21.1"   # the version the plugin is built and tested against
+  from: "1.21.1"
+  to: "1.21.11"
+  description: "VeyrionItem pack"
+  auto-generate: true       # rebuild all packs on server start

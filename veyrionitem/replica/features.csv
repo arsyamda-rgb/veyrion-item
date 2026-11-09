@@ -1,0 +1,15 @@
+feature,priority,clone,note
+custom items (yaml),must,yes,flat 2D items on any flat base material
+custom item 3D models,should,no,pack builder supports modelFile, loader does not expose it yet
+custom blocks (note block),must,partial,550 states; no custom break speed/sounds/drops table yet
+custom blocks (tripwire/chorus),could,no,
+furniture,must,partial,place/punch/rotate; no seats, no lights, no per-furniture 3D model yet
+font images,must,yes,chat placeholders :id:
+HUD (bossbar/actionbar layout),should,no,space glyphs exist; no HUD manager yet
+GUI backgrounds,must,partial,chest menus only, no pagination
+resource pack generator,must,yes,per-version zips 1.21.1-1.21.11 + manifest.txt
+resource pack hosting/auto-send,must,no,needs backend (replica-backend)
+recipes,should,no,
+loot tables / drops,should,no,
+armor / tools / durability,should,no,
+sounds,could,no,

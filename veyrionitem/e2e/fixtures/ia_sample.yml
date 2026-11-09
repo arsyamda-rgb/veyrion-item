@@ -1,0 +1,82 @@
+info:
+  namespace: demo_ia
+items:
+  ruby:
+    display_name: "&c&lRuby &#ff8800gold"
+    lore:
+      - "&7A shiny gem"
+    resource:
+      material: PAPER
+      generate: true
+      textures:
+        - item/ruby.png
+  ruby_sword:
+    display_name: "&cSword"
+    durability:
+      max_custom_durability: 100
+    resource:
+      material: DIAMOND_SWORD
+      generate: true
+      textures:
+        - item/sword
+    specific_properties:
+      armor:
+        slot: head
+  ruby_block:
+    display_name: "&cRuby Block"
+    resource:
+      material: PAPER
+      generate: true
+      textures:
+        - block/ruby_block.png
+    specific_properties:
+      block:
+        placed_model:
+          type: REAL_NOTE
+        hardness: 2
+  ruby_wire:
+    resource:
+      material: PAPER
+      generate: true
+      textures:
+        - block/a.png
+        - block/b.png
+    specific_properties:
+      block:
+        placed_model:
+          type: REAL_WIRE
+  chair:
+    display_name: "&6Chair"
+    resource:
+      material: PAPER
+      generate: false
+      model_path: furniture/chair
+    behaviours:
+      furniture:
+        solid: true
+        hitbox:
+          length: 1.5
+          width: 1
+          height: 2
+  crown:
+    resource:
+      material: PAPER
+      generate: true
+      textures:
+        - item/crown.png
+    behaviours:
+      hat: true
+  broken:
+    resource:
+      material: PAPER
+font_images:
+  heart:
+    path: font/heart.png
+    scale_ratio: 9
+    y_position: 8
+    show_in_gui: true
+  internal:
+    path: "_iainternal:icon_blank"
+recipes:
+  ruby_recipe:
+    type: crafting_table

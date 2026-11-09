@@ -1,0 +1,15 @@
+name: VeyrionItem
+version: '${project.version}'
+main: dev.veyrion.item.VeyrionItemPlugin
+api-version: '1.21'
+description: Custom items, blocks, furniture, font images and GUIs with a multi-version resource pack generator.
+commands:
+  vi:
+    description: VeyrionItem admin command
+    usage: /vi
+    aliases: [veyrionitem]
+permissions:
+  veyrionitem.admin:
+    default: op
+  veyrionitem.fontimage:
+    default: true

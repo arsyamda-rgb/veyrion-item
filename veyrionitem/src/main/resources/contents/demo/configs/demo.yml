@@ -1,0 +1,62 @@
+# Demo content. Copy this folder to make your own namespace (folder name = namespace).
+#
+# contents/<namespace>/
+#   configs/*.yml          <- this kind of file (subfolders allowed)
+#   resource_pack/assets/<namespace>/...   <- textures, models, sounds. Copied into every generated pack.
+#
+# 'texture: item/ruby.png'  means  resource_pack/assets/<namespace>/textures/item/ruby.png
+# 'model: item/chair'       means  resource_pack/assets/<namespace>/models/item/chair.json  (your own model)
+# Use either texture (flat item/cube block is generated for you) or model.
+# Ids are permanent: custom_model_data / block states / glyphs are stored in data/ids.yml,
+# so renaming or reordering things never breaks items players already own.
+
+items:
+  ruby:
+    display_name: "<red>Ruby"
+    base: PAPER
+    texture: item/ruby.png
+    lore:
+      - "<gray>A shiny test gem."
+
+blocks:
+  ruby_block:
+    display_name: "<red>Ruby Block"
+    texture: block/ruby_block.png
+
+furniture:
+  armchair:
+    display_name: "<gold>Armchair"
+    base: PAPER
+    texture: item/armchair.png
+    scale: 1.0
+    hitbox:
+      width: 0.9
+      height: 0.9
+
+font_images:
+  heart:
+    texture: font/heart.png
+    height: 9
+    ascent: 8
+  shop_bg:
+    texture: gui/shop_bg.png
+    height: 166
+    ascent: 13
+
+menus:
+  shop:
+    title: "<dark_gray>Shop"
+    rows: 3
+    background: demo:shop_bg
+    offset: -8
+    slots:
+      11:
+        item: demo:ruby
+        command: "vi give %player% demo:ruby 1"
+      13:
+        item: demo:ruby_block
+        command: "vi give %player% demo:ruby_block 1"
+      15:
+        item: demo:armchair
+        command: "vi give %player% demo:armchair 1"
+        close: true
