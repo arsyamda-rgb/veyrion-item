@@ -1,0 +1,37 @@
+
+name: Build Veyrion Item
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v5
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+          cache-dependency-path: veyrionitem/pom.xml
+
+      - name: Build with Maven
+        working-directory: veyrionitem
+        run: mvn -B clean package
+
+      - name: Veyrion-Items
+        uses: actions/upload-artifact@v4
+        with:
+          name: Veyrion-Item
+          path: veyrionitem/target/*.jar
+          if-no-files-found: error
